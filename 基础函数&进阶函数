@@ -1,4 +1,7 @@
+共分为：文本函数、日期和时间函数、计数和求和、查找与引用、统计函数共5类。
 1.文本函数
+包括：clean, trim, concatenate/concat/&, len, left/right/mid, lower/upper共6类；
+text, value, find, search, substitute, replace共6个。
 1.1 基础
 （1） clean
 删除文本中的所有不能打印字符
@@ -45,6 +48,8 @@ format_text包含以下几种情况：
 语法格式：replace(old_text, start_num, num_chars, new_text)
 
 2. 日期和时间
+包括：today, now, date, day, month, year, weeknum, weekday, workday共9个；
+datevalue, days, datedif共3个。
 2.1 基础
 （1）today
 返回当天日期的序列号
@@ -88,3 +93,67 @@ format_text包含以下几种情况：
 计算两个日期之间相隔的天数、月数、年数
 语法格式：datedif(start_date, end_date, unit)
 1)unit "Y" 年，"M" 月, "D" 天
+
+3. 计数和求和
+包括：count, counta, countblank, subtotal, sum共5个；
+countif, countifs, sumif, sumifs, sumproduct
+3.1 基础
+（1）count
+统计数字格式的数据个数
+语法格式：count(value1, value2, ......, valueN)
+1)仅包括数字型单元格，错误值、文本、逻辑值、空值将被忽略
+（2） counta
+统计非空单元格的个数
+语法格式：counta(value1, value2, ......, valueN)
+1）不包括空值，其他都被统计在内
+（3）countblank
+统计空单元格个数
+语法格式：countblank(value1, value2, ......, valueN)
+（4）subtotal
+在指定的范围内根据制订的分类汇总函数进行计算
+语法格式：subtotal(function_num, ref1, [ref2], ...)
+1)function_num
+1  101  average
+2  102  count
+3  103  counta
+4  104  max
+5  105  min
+6  106  product
+7  107  stdev
+8  108  stdevp
+9  109  sum
+10  110  var
+11  111  varp
+注：1-11统计时包含手动隐藏的行；101-111不包括手动隐藏的行；始终排除已筛选掉的单元格
+2）ref1必需， 第一个命名区域或引用
+3）ref2,...可选；第2至254个命名区域或引用
+（5）sum
+求和
+语法格式：sum(number1, [number2],...)
+1）连续区域求和、非连续区域求和、交叉区域求和
+2）只对区域内的数值型单元格求和
+3.2 高阶
+（1）countif
+计数
+语法格式:countif(range, criteria), 即（要检查哪些区域， 要查找哪些内容）
+1)range：必需。计算非空单元格区域
+2）criteria：必需。计数时的条件，数字，表达式，文本等均可以
+3）多条件时，只能分别返回满足每个条件的计数
+4）统计重复数据
+（2）countifs
+计算多个区域中满足给定条件的单元格的个数
+语法格式：countifs(criteria_range1, criteria1, criteria_range2, criteria2,...)
+（3）sumif
+根据指定条件求和
+语法格式：sumif(criteria_range, criteria, sum_range), (条件范围，条件，求和范围）
+1）多条件时，只能分别返回满足每个条件的计数
+2）条件中支持通配符
+（4）sumifs
+多条件求和
+语法格式：sumifs(sum_criteria, criteria_range1, criteria1, [criteria_range2], [criterai2], ...)
+1)支持通配符
+2）sum_range和criteria_range的大小必须一致
+（5）sumproduct
+返回给定数组对应的乘积之和
+语法格式：sumproduct(array1, array2, array3, ... )
+1)带条件的，条件判别之后的逻辑array
