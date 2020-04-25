@@ -36,3 +36,55 @@ format_text包含以下几种情况：
 语法格式：search（find_text, within_text, [start_num]）
 1）支持通配符“?”   “*”
 2）不区分大小写
+3)若查找通配符，在其前面加“~”
+（5）substitute
+使用新文本替换文本字符串中的旧文本
+语法格式substitute(text, old_text, new_text, [instance_num])
+（6）replace
+替换old_text中特定位置特定数量的字符串
+语法格式：replace(old_text, start_num, num_chars, new_text)
+
+2. 日期和时间
+2.1 基础
+（1）today
+返回当天日期的序列号
+语法格式：today()
+（2）now
+返回当前日期和时间的序列号
+语法格式：now()
+（3）date
+返回特定日期的序列号
+语法格式：date(year, month, day)
+1)year 可以包括一位到四位数字；0~1899，则1900+year；1900~9999，则为year
+2）month 一个正整数或负整数；大于12，则（0+month）/12;小于1，则0-mouth-1
+3）day 一个正整数或负整数，1到31
+（4）day
+将序列号转换为一个月中的第几天
+（5）month
+将序列号转换为月
+（6）year
+将序列号转换为年
+（7）weeknum
+返回一年中的周数
+语法格式：weeknum(serial_number, [return_type])
+1)return_type, 星期从哪一天开始算
+（8）weekday
+将序列号转换为一个星期中的某天
+语法格式：weekday(serial_number, [return_type])
+1)return_type, 星期从哪一天开始算
+（9）workday
+返回指定工作日数之前或之后的日期的序列号
+语法格式：workday(start_date, days, [holidays])
+2.2 高阶
+（1）datevalue
+将文本形式的日期转换为序列号（数值类型），便于做日期加减计算
+语法格式：datevalue(date_text)
+1)参数date_text为日期的文本，例如“2018-2-12”
+（2）days
+返回两个日期之间的天数
+语法格式：days(end_date, start_date)
+1）注意参数为数字或者文本时
+（3）datedif 
+计算两个日期之间相隔的天数、月数、年数
+语法格式：datedif(start_date, end_date, unit)
+1)unit "Y" 年，"M" 月, "D" 天
