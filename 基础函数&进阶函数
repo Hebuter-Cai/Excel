@@ -160,3 +160,53 @@ countif, countifs, sumif, sumifs, sumproduct
 2）计数、求和、排名（与countif组合完成）
 3）数组参数必须具有相同的维数
 4）将非数值型元素作为0处理
+
+4. 查找与引用
+包括：choose
+vlookup, lookup, index, match, offset, inderect, hyperlink
+4.1 基础
+（1）choose
+返回数据集中第index_num的值
+语法格式：choose(index_num, value1, [value2], ...)
+1)index_num:必需；所选定参数的相对位置
+2）value：必需：数据集。可以是数字，文本，函数，单元格引用等
+3）即将[value1, value2, ...]组成一个集合，选择第index_num个数
+4.2 高阶
+（1）vlookup
+
+语法格式：vlookup(lookup_value, table_array, col_index_num, [range_lookuo])
+1)lookup_value,必需，若小于table_array第一列中的最小值，则返回错误值
+2）table_array,必需，单元格区域或引用，第一列必须包含lookup_value
+3)col_index_num必需，取table_array中的第几列
+4）range_lookup可选，精准/近似匹配
+5）range_lookup为true时，近似匹配，必须升序排列table_array第一列中的值，否则无法返回正确的值
+6）range_lookup为False时，精准匹配，返回第一个匹配的值，若无，则返回错误值
+
+（2）lookup
+当需要查询一行或一列并查找另一行或一列的相同位置的值时。
+语法格式：lookup(lookup_value, lookup_vector, [r]result_vector)
+即lookup(查找的值，查找值所在的范围，返回值所在的范围）
+1)lookup_value必需，
+2）lookup_vector必需，只包含一行或一列的区域，按照升序排列,
+精准值则返回，无精准值则返回次小的。
+3）result_vector可选，与lookup_vector参数大小相同
+4）案例，如果lookup_vector不排序也行
+（1, (0/(条件1)*（条件2）), 返回值范围）
+5）忽略错误值
+
+（3）index
+返回表格或区域中的值
+语法格式：index(array, row_num, [column_num])
+即index(数组或区域，行号，列号)
+1）返回单一值，返回数组
+
+（4）match
+返回指定值在数组中的位置
+语法格式：match(lookup_value, lookup_array, [match_type])
+1)match_type, 0、-1、1
+0：精准匹配
+1：升序查找。默认，lookup_array必须升序排列，查找小于或等于的最大值
+-1：降序查找，lookup_array必须降序排列，查找大于或等于的最小值
+
+2）第一次出现，或者最后一次出现
+3）E3>E3:E9,E3:E9>E3
