@@ -157,3 +157,6 @@ countif, countifs, sumif, sumifs, sumproduct
 返回给定数组对应的乘积之和
 语法格式：sumproduct(array1, array2, array3, ... )
 1)带条件的，条件判别之后的逻辑array
+2）计数、求和、排名（与countif组合完成）
+3）数组参数必须具有相同的维数
+4）将非数值型元素作为0处理
