@@ -210,3 +210,35 @@ vlookup, lookup, index, match, offset, inderect, hyperlink
 
 2）第一次出现，或者最后一次出现
 3）E3>E3:E9,E3:E9>E3
+
+（5）offset
+以指定的引用为参考系，通过给定偏移量得到新的引用，返回的引用可以是一个单元格，也可以是单元格区域，
+并可以指定返回的行数或列数。
+语法结构：offset(reference, rows, cols, [height], [width])
+1)基础运算
+2）和多个函数配合的拓展应用
+3）制作动态图表
+4）案例
+A.查找某一个数值
+B.偏移后区域求和
+C.区域偏移
+D.反向查找  offset+match
+E.提取不重复清单 offset+match
+F.动态查找
+G.查询最后一个数据，最后某几个数据，最近一个数据区域的总和、最大/最小值
+H.重复录入数据 offset+int+row
+
+（6）indirect
+作用：返回有文本字符串指定的引用
+语法结构：indirect(ref_text, a1)
+1)ref_text:必需。对单元格的引用，A1样式或R1C1样式
+2)A1：可选，TRUE或省略即为A1样式，False为R1C1
+3)案例
+A.生成二级下拉菜单
+B.多表合并汇总
+
+5.统计函数
+
+
+6.信息函数
+
