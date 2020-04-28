@@ -238,7 +238,114 @@ A.生成二级下拉菜单
 B.多表合并汇总
 
 5.统计函数
+排除计数和求和两类函数。
+max, min, large, small, average
+
+5.1 基础
+（1）average
+作用：求区域内数值的平均数
+语法结构：average(数值1, 数值2,...)
+1)参数也可以是单元格区域
+
+（2）averageif
+
+（3）min
+作用：求区域内最小的数值
+语法结构：min(数值1, 数值2,...)
+1)参数也可以是单元格区域
+
+（4）max
+作用：求区域内最大的数值
+语法结构：max(数值1, 数值2,...)
+1)参数也可以是单元格区域
+
+（5）large
+作用：返回第N大的数值
+语法结构：large(数组或数据区域，N）
+
+（6）small
+作用：返回第N小的数值
+语法结构：small(数组或数据区域，N）
+
+5.2 进阶
 
 
 6.信息函数
 
+（1）isblank
+作用：判别单元格是否为空
+语法结构：isblank(value)
+1)Yes, then TRUE; No, then FALSE
+
+（2）islogical
+作用：判别单元格是否为逻辑值
+语法结构：islogical(value)
+1)Yes, then TRUE; No, then FALSE.
+
+（3）isnumber
+作用：判别是否为数字
+语法结构：isnumber(value)
+
+（4）isodd
+作用：判别是否为奇数
+语法结构：isodd(value)
+
+（5）iseven
+作用：判别是否为偶数
+语法结构：iseven(value)
+
+（6）istext
+作用：判别是否为文本
+语法结构：istext(value)
+
+（7）isnontext
+作用：判别不是文本
+语法结构：isnontext（value）
+
+（8）isref
+作用：判别是否为引用
+语法结构：isref(value)
+
+（9）iserror
+作用：判别单元格是否为任何错误
+语法结构：iserror(value)
+1)包含所有的错误
+
+（10）iserr
+作用：判别单元格是否为错误（仅不包括N/A错误）
+语法结构：iserr(value)
+1)就是不判别N/A错误
+
+（11）isna
+作用：判别单元格是否为N/A错误
+语法结构：isna(value)
+
+（12）error.type
+作用：返回对应于错误类型的数字
+语法结构：error.type(error_val)
+1)error_val，为要查找其标识号的错误类型
+
+（13）cell
+作用：返回有关单元格格式、位置或内容的信息
+语法结构：cell(info_type, [reference])
+
+（14）type
+作用：返回单元格中数值的类型
+语法结构：type(value)
+
+（15）isformula
+作用：判别是否为公式
+语法结构：isformula(reference)
+1)Excel2013新增
+
+（16）N
+作用：返回转化为数字的值
+语法结构：N（value）
+
+（17）NA
+作用：返回错误值
+语法结构：NA()
+
+（18）info
+作用：返回有关当前环境的信息
+语法结构：info(type_text)
